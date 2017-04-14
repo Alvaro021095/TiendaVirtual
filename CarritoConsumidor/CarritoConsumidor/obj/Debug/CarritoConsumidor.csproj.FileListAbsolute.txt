@@ -1,0 +1,12 @@
+c:\users\loter\documents\visual studio 2013\Projects\CarritoConsumidor\CarritoConsumidor\bin\Debug\CarritoConsumidor.exe.config
+c:\users\loter\documents\visual studio 2013\Projects\CarritoConsumidor\CarritoConsumidor\bin\Debug\CarritoConsumidor.exe
+c:\users\loter\documents\visual studio 2013\Projects\CarritoConsumidor\CarritoConsumidor\bin\Debug\CarritoConsumidor.pdb
+c:\users\loter\documents\visual studio 2013\Projects\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.csprojResolveAssemblyReference.cache
+c:\users\loter\documents\visual studio 2013\Projects\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.Form1.resources
+c:\users\loter\documents\visual studio 2013\Projects\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.Properties.Resources.resources
+c:\users\loter\documents\visual studio 2013\Projects\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.csproj.GenerateResource.Cache
+c:\users\loter\documents\visual studio 2013\Projects\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.exe
+c:\users\loter\documents\visual studio 2013\Projects\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.pdb
+C:\Users\loter\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\bin\Debug\CarritoConsumidor.exe.config
+C:\Users\loter\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.exe
+C:\Users\loter\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.pdb
