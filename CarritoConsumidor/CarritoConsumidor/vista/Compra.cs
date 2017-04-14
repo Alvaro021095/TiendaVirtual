@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarritoConsumidor.ServiceLogin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace CarritoConsumidor.vista
 {
     public partial class Compra : Form
     {
-        public Compra()
+        usuario thisUser;
+        public Compra(usuario users)
         {
             InitializeComponent();
+            this.thisUser = users;
         }
     }
 }

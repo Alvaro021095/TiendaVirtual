@@ -1,4 +1,5 @@
 ﻿using CarritoConsumidor.controladores;
+using CarritoConsumidor.ServiceLogin;
 using CarritoConsumidor.vista;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace CarritoConsumidor
 
         CtlLogin ctlLogin;
 
+        usuario users;
+
         public Login()
         {
             InitializeComponent();
@@ -26,7 +29,10 @@ namespace CarritoConsumidor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
+            users = ctlLogin.login(txtUsuario.Text, txtContrasenia.Text);
+
+
             Thread hiloInterfaz;
             hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirGestionComprar));
             this.Close();
@@ -62,7 +68,7 @@ namespace CarritoConsumidor
 
         public void abrirGestionComprar()
         {
-            Compra com = new Compra();
+            Compra com = new Compra(users);
             com.ShowDialog();
         }
     }
