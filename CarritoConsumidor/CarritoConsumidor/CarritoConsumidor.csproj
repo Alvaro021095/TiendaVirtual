@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controladores\CtlCliente.cs" />
+    <Compile Include="controladores\CtlCompras.cs" />
     <Compile Include="controladores\CtlLogin.cs" />
     <Compile Include="Service References\ServiceCarrito\Reference.cs">
       <AutoGen>True</AutoGen>
