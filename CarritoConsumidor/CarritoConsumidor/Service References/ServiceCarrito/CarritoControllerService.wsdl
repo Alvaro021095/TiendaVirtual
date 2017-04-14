@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://co.edu.eam.ingsoft.distribuidos" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="CarritoControllerService" targetNamespace="http://co.edu.eam.ingsoft.distribuidos" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://co.edu.eam.ingsoft.distribuidos" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="listarCarrito" type="tns:listarCarrito" />
+      <xs:element name="listarCarritoResponse" type="tns:listarCarritoResponse" />
+      <xs:element name="operacionAgregarCarrito" type="tns:operacionAgregarCarrito" />
+      <xs:element name="operacionAgregarCarritoResponse" type="tns:operacionAgregarCarritoResponse" />
+      <xs:element name="validarProductos" type="tns:validarProductos" />
+      <xs:element name="validarProductosResponse" type="tns:validarProductosResponse" />
+      <xs:complexType name="listarCarrito">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="listarCarritoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:carrito" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="carrito">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cantidad" type="xs:int" />
+          <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="id" type="xs:int" />
+          <xs:element minOccurs="0" name="producto" type="tns:producto" />
+          <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
+          <xs:element minOccurs="0" name="valorTotal" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="producto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cantidad" type="xs:int" />
+          <xs:element minOccurs="0" name="id" type="xs:int" />
+          <xs:element minOccurs="0" name="nombre" type="xs:string" />
+          <xs:element minOccurs="0" name="valor" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="usuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cliente" type="tns:cliente" />
+          <xs:element minOccurs="0" name="id" type="xs:int" />
+          <xs:element minOccurs="0" name="nombreUsuario" type="xs:string" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cliente">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="apellido" type="xs:string" />
+          <xs:element minOccurs="0" name="cedula" type="xs:string" />
+          <xs:element minOccurs="0" name="correo" type="xs:string" />
+          <xs:element minOccurs="0" name="id" type="xs:int" />
+          <xs:element minOccurs="0" name="nombre" type="xs:string" />
+          <xs:element minOccurs="0" name="telefono" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validarProductos">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:carrito" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validarProductosResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="operacionAgregarCarrito">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="carrito" type="tns:carrito" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="operacionAgregarCarritoResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="validarProductosResponse">
+    <wsdl:part name="parameters" element="tns:validarProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarCarritoResponse">
+    <wsdl:part name="parameters" element="tns:listarCarritoResponse" />
+  </wsdl:message>
+  <wsdl:message name="operacionAgregarCarrito">
+    <wsdl:part name="parameters" element="tns:operacionAgregarCarrito" />
+  </wsdl:message>
+  <wsdl:message name="listarCarrito">
+    <wsdl:part name="parameters" element="tns:listarCarrito" />
+  </wsdl:message>
+  <wsdl:message name="validarProductos">
+    <wsdl:part name="parameters" element="tns:validarProductos" />
+  </wsdl:message>
+  <wsdl:message name="operacionAgregarCarritoResponse">
+    <wsdl:part name="parameters" element="tns:operacionAgregarCarritoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CarritoController">
+    <wsdl:operation name="listarCarrito">
+      <wsdl:input name="listarCarrito" message="tns:listarCarrito" />
+      <wsdl:output name="listarCarritoResponse" message="tns:listarCarritoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="validarProductos">
+      <wsdl:input name="validarProductos" message="tns:validarProductos" />
+      <wsdl:output name="validarProductosResponse" message="tns:validarProductosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="operacionAgregarCarrito">
+      <wsdl:input name="operacionAgregarCarrito" message="tns:operacionAgregarCarrito" />
+      <wsdl:output name="operacionAgregarCarritoResponse" message="tns:operacionAgregarCarritoResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CarritoControllerServiceSoapBinding" type="tns:CarritoController">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listarCarrito">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="listarCarrito">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="listarCarritoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarProductos">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="validarProductos">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="validarProductosResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="operacionAgregarCarrito">
+      <soap:operation soapAction="AgregarCarrito" style="document" />
+      <wsdl:input name="operacionAgregarCarrito">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="operacionAgregarCarritoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CarritoControllerService">
+    <wsdl:port name="CarriControPort" binding="tns:CarritoControllerServiceSoapBinding">
+      <soap:address location="http://localhost:8080/servicio_web_master/CarritoController" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

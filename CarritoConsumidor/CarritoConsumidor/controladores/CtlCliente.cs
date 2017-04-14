@@ -1,4 +1,5 @@
-﻿using CarritoConsumidor.ServicioCliente;
+﻿using CarritoConsumidor.ServiceCliente;
+using CarritoConsumidor.ServicioCliente;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,28 @@ namespace CarritoConsumidor.controladores
     public class CtlCliente
     {
 
-        public void crear()
+        public bool crear(int id,String apellido, String cedula, String correo, String nombre, String telefono,
+            String usuario, String contrasenia)
         {
+            cliente c = new cliente();
+            c.id = id;
+            c.apellido = apellido;
+            c.cedula = cedula;
+            c.correo = correo;
+            c.nombre = nombre;
+            c.telefono = telefono;
 
-            ClienteCtlClient ws = new ClienteCtlClient();
+            ClientesControllerClient wsCliente = new ClientesControllerClient();
+            String resp = wsCliente.operacionCrear(c, contrasenia, usuario);
 
-            ws.operacionCrearCliente("22","ddd","ggg","dfdf@","222","df");
-
+            if(resp.Equals("OK")){
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
     }

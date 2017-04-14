@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://co.edu.eam.ingsoft.distribuidos" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ProductoControllerService" targetNamespace="http://co.edu.eam.ingsoft.distribuidos" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://co.edu.eam.ingsoft.distribuidos" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="operacionListarProductos" type="tns:operacionListarProductos" />
+      <xs:element name="operacionListarProductosResponse" type="tns:operacionListarProductosResponse" />
+      <xs:complexType name="operacionListarProductos">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="nombreProducto" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="operacionListarProductosResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="producto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cantidad" type="xs:int" />
+          <xs:element minOccurs="0" name="id" type="xs:int" />
+          <xs:element minOccurs="0" name="nombre" type="xs:string" />
+          <xs:element minOccurs="0" name="valor" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="operacionListarProductosResponse">
+    <wsdl:part name="parameters" element="tns:operacionListarProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="operacionListarProductos">
+    <wsdl:part name="parameters" element="tns:operacionListarProductos" />
+  </wsdl:message>
+  <wsdl:portType name="ProductoController">
+    <wsdl:operation name="operacionListarProductos">
+      <wsdl:input name="operacionListarProductos" message="tns:operacionListarProductos" />
+      <wsdl:output name="operacionListarProductosResponse" message="tns:operacionListarProductosResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProductoControllerServiceSoapBinding" type="tns:ProductoController">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="operacionListarProductos">
+      <soap:operation soapAction="listarProductos" style="document" />
+      <wsdl:input name="operacionListarProductos">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="operacionListarProductosResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductoControllerService">
+    <wsdl:port name="ProCtlPort" binding="tns:ProductoControllerServiceSoapBinding">
+      <soap:address location="http://localhost:8080/servicio_web_master/ProductoController" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
