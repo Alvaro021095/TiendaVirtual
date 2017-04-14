@@ -33,7 +33,6 @@ namespace CarritoConsumidor.vista
             String telefono = txtTelefono.Text;
             String usuario = txtUsuario.Text;
             String contrasenia = txtContrasenia.Text;
-            int id = 1;
 
             if(cedula.Equals("") || nombre.Equals("") || apellido.Equals("") || correo.Equals("")
                 || telefono.Equals("") || usuario.Equals("") || contrasenia.Equals("")){
@@ -41,7 +40,7 @@ namespace CarritoConsumidor.vista
                 }
             else
             {
-                if(ctlCli.crear(id,apellido,cedula,correo,nombre,telefono,usuario,contrasenia)){
+                if(ctlCli.crear(apellido,cedula,correo,nombre,telefono,usuario,contrasenia)){
                     MessageBox.Show("Se creo con exito");
                     Thread hiloInterfaz;
                     hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirGestionLogin));

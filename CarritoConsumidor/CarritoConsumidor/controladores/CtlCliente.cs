@@ -11,11 +11,10 @@ namespace CarritoConsumidor.controladores
     public class CtlCliente
     {
 
-        public bool crear(int id,String apellido, String cedula, String correo, String nombre, String telefono,
+        public bool crear(String apellido, String cedula, String correo, String nombre, String telefono,
             String usuario, String contrasenia)
         {
             cliente c = new cliente();
-            c.id = id;
             c.apellido = apellido;
             c.cedula = cedula;
             c.correo = correo;
@@ -23,6 +22,8 @@ namespace CarritoConsumidor.controladores
             c.telefono = telefono;
 
             ClientesControllerClient wsCliente = new ClientesControllerClient();
+
+            
             String resp = wsCliente.operacionCrear(c, contrasenia, usuario);
 
             if(resp.Equals("OK")){

@@ -18,3 +18,14 @@ C:\Users\loter\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\ob
 C:\Users\loter\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.Properties.Resources.resources
 C:\Users\loter\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.vista.Registro.resources
 C:\Users\loter\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.csproj.GenerateResource.Cache
+C:\Users\Marcela\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\bin\Debug\CarritoConsumidor.exe.config
+C:\Users\Marcela\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.exe
+C:\Users\Marcela\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.pdb
+C:\Users\Marcela\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\bin\Debug\CarritoConsumidor.exe
+C:\Users\Marcela\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\bin\Debug\CarritoConsumidor.pdb
+C:\Users\Marcela\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.csprojResolveAssemblyReference.cache
+C:\Users\Marcela\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.vista.Compra.resources
+C:\Users\Marcela\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.Login.resources
+C:\Users\Marcela\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.Properties.Resources.resources
+C:\Users\Marcela\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.vista.Registro.resources
+C:\Users\Marcela\Source\Repos\TiendaVirtual\CarritoConsumidor\CarritoConsumidor\obj\Debug\CarritoConsumidor.csproj.GenerateResource.Cache

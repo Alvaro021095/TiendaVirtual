@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controladores\CtlCliente.cs" />
+    <Compile Include="controladores\CtlLogin.cs" />
     <Compile Include="Service References\ServiceCarrito\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,7 +141,7 @@
     <None Include="Service References\ServiceCliente\CarritoConsumidor.ServiceCliente.operacionCrearResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceCliente\ClientesControllerService.wsdl" />
+    <None Include="Service References\ServiceCliente\ClientesControllerService1.wsdl" />
     <None Include="Service References\ServiceFactura\CarritoConsumidor.ServiceFactura.crearCompraResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -160,7 +161,7 @@
     <None Include="Service References\ServiceLogin\CarritoConsumidor.ServiceLogin.usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceLogin\LoginControllerService.wsdl" />
+    <None Include="Service References\ServiceLogin\LoginControllerService1.wsdl" />
     <None Include="Service References\ServiceProducto\CarritoConsumidor.ServiceProducto.operacionListarProductosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

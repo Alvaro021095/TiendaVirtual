@@ -16,19 +16,17 @@ namespace CarritoConsumidor
     public partial class Login : Form
     {
 
-        CtlCliente ctlCli;
+        CtlLogin ctlLogin;
 
         public Login()
         {
             InitializeComponent();
-            ctlCli = new CtlCliente();
+            ctlLogin = new CtlLogin();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             
-            //logica
-
             Thread hiloInterfaz;
             hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirGestionComprar));
             this.Close();
