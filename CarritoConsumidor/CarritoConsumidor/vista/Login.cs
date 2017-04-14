@@ -29,15 +29,50 @@ namespace CarritoConsumidor
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (txtUsuario.Text != "")
+            {
+                if (txtContrasenia.Text != "")
+                {
 
-            users = ctlLogin.login(txtUsuario.Text, txtContrasenia.Text);
+                    users = ctlLogin.login(txtUsuario.Text, txtContrasenia.Text);
+
+                    if (users != null)
+                    {
+
+                        Thread hiloInterfaz;
+                        hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirGestionComprar));
+                        this.Close();
+                        hiloInterfaz.SetApartmentState(System.Threading.ApartmentState.STA);
+                        hiloInterfaz.Start();
+
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("El usuario no se encuentra registrado por favor realice el registro");
+
+                    }
+
+                    
+
+                }
+                else
+                {
+
+                    MessageBox.Show("Por favor ingrese un dato en el campo contraseña");
+
+                }
+
+            }
+            else
+            {
+
+                MessageBox.Show("Por favor ingrese un dato en el campo usuario");
+            }
+            
 
 
-            Thread hiloInterfaz;
-            hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirGestionComprar));
-            this.Close();
-            hiloInterfaz.SetApartmentState(System.Threading.ApartmentState.STA);
-            hiloInterfaz.Start();
+            
 
         }
 

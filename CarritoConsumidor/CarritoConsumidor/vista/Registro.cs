@@ -53,17 +53,26 @@ namespace CarritoConsumidor.vista
                     MessageBox.Show("No se pudo registrar");
                 }
             }
-
-
             
         }
-
 
 
         public void abrirGestionLogin()
         {
             Login lo = new Login();
             lo.ShowDialog();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+
+            Thread hiloInterfaz;
+            hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirGestionLogin));
+            this.Close();
+            hiloInterfaz.SetApartmentState(System.Threading.ApartmentState.STA);
+            hiloInterfaz.Start();
+
+
         }
     }
 }
