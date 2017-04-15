@@ -17,12 +17,14 @@ namespace CarritoConsumidor.vista
     {
         usuario thisUser;
         public CtlCompras ctlCom;
+        int valor1;
 
         public Compra(usuario users)
         {
             InitializeComponent();
             this.thisUser = users;
             ctlCom = new CtlCompras();
+            valor1 = 0;
         }
 
         private void btnBuscarPro_Click(object sender, EventArgs e)
@@ -75,6 +77,20 @@ namespace CarritoConsumidor.vista
             ProductosBuscados.Columns.Add(c2);
             ProductosBuscados.Columns.Add(c3);
 
+        }
+
+        private void btnAgregarCarri_Click(object sender, EventArgs e)
+        {
+
+          
+            valor1 = (int)ProductosBuscados.CurrentRow.Cells["Cantidad"].Value;
+            MessageBox.Show("" + valor1);
+
+        }
+
+        private void ProductosBuscados_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+           
         }
     }
 }

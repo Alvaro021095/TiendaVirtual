@@ -37,6 +37,9 @@
             this.ProductosBuscados = new System.Windows.Forms.DataGridView();
             this.Carrito = new System.Windows.Forms.DataGridView();
             this.btnComprar = new System.Windows.Forms.Button();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosBuscados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Carrito)).BeginInit();
             this.SuspendLayout();
@@ -69,17 +72,18 @@
             // 
             // btnAgregarCarri
             // 
-            this.btnAgregarCarri.Location = new System.Drawing.Point(355, 127);
+            this.btnAgregarCarri.Location = new System.Drawing.Point(418, 128);
             this.btnAgregarCarri.Name = "btnAgregarCarri";
             this.btnAgregarCarri.Size = new System.Drawing.Size(75, 40);
             this.btnAgregarCarri.TabIndex = 3;
             this.btnAgregarCarri.Text = "Agregar al Carrito";
             this.btnAgregarCarri.UseVisualStyleBackColor = true;
+            this.btnAgregarCarri.Click += new System.EventHandler(this.btnAgregarCarri_Click);
             // 
             // Total
             // 
             this.Total.AutoSize = true;
-            this.Total.Location = new System.Drawing.Point(315, 212);
+            this.Total.Location = new System.Drawing.Point(378, 213);
             this.Total.Name = "Total";
             this.Total.Size = new System.Drawing.Size(34, 13);
             this.Total.TabIndex = 4;
@@ -87,7 +91,7 @@
             // 
             // txtTotalFac
             // 
-            this.txtTotalFac.Location = new System.Drawing.Point(355, 209);
+            this.txtTotalFac.Location = new System.Drawing.Point(418, 210);
             this.txtTotalFac.Name = "txtTotalFac";
             this.txtTotalFac.Size = new System.Drawing.Size(94, 20);
             this.txtTotalFac.TabIndex = 5;
@@ -95,15 +99,20 @@
             // ProductosBuscados
             // 
             this.ProductosBuscados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProductosBuscados.Location = new System.Drawing.Point(24, 105);
+            this.ProductosBuscados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Valor,
+            this.Cantidad});
+            this.ProductosBuscados.Location = new System.Drawing.Point(12, 105);
             this.ProductosBuscados.Name = "ProductosBuscados";
-            this.ProductosBuscados.Size = new System.Drawing.Size(249, 166);
+            this.ProductosBuscados.Size = new System.Drawing.Size(344, 166);
             this.ProductosBuscados.TabIndex = 6;
+            this.ProductosBuscados.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductosBuscados_RowEnter);
             // 
             // Carrito
             // 
             this.Carrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Carrito.Location = new System.Drawing.Point(503, 105);
+            this.Carrito.Location = new System.Drawing.Point(545, 105);
             this.Carrito.Name = "Carrito";
             this.Carrito.Size = new System.Drawing.Size(245, 166);
             this.Carrito.TabIndex = 7;
@@ -116,6 +125,21 @@
             this.btnComprar.TabIndex = 8;
             this.btnComprar.Text = "Comprar";
             this.btnComprar.UseVisualStyleBackColor = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Valor
+            // 
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
             // 
             // Compra
             // 
@@ -152,5 +176,8 @@
         private System.Windows.Forms.DataGridView ProductosBuscados;
         private System.Windows.Forms.DataGridView Carrito;
         private System.Windows.Forms.Button btnComprar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
     }
 }
