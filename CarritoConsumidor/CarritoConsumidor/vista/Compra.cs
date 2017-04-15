@@ -33,9 +33,11 @@ namespace CarritoConsumidor.vista
             producto[] listaDeProdcutos = ctlCom.listarProducto(nombrePro);
 
             if(listaDeProdcutos != null){
-
-
-
+                for (int i = 0; i < listaDeProdcutos.Length; i++ )
+                {
+                    ProductosBuscados.Rows.Add(listaDeProdcutos.ElementAt(i).nombre,
+                        listaDeProdcutos.ElementAt(i).valor, listaDeProdcutos.ElementAt(i).cantidad);
+                }       
             }
             else
             {
@@ -48,18 +50,22 @@ namespace CarritoConsumidor.vista
         private void Compra_Load(object sender, EventArgs e)
         {
 
-            DataGridTextBoxColumn c1 = new DataGridTextBoxColumn();
+            DataGridViewTextBoxColumn c1 = new DataGridViewTextBoxColumn();
             c1.HeaderText="Nombre";
             c1.Width = 50;
+            
 
-
-            DataGridTextBoxColumn c2 = new DataGridTextBoxColumn();
+            DataGridViewTextBoxColumn c2 = new DataGridViewTextBoxColumn();
             c2.HeaderText = "Valor";
             c2.Width = 50;
 
-            DataGridTextBoxColumn c3 = new DataGridTextBoxColumn();
+            DataGridViewTextBoxColumn c3 = new DataGridViewTextBoxColumn();
             c3.HeaderText = "Cantidad";
             c3.Width = 50;
+
+            ProductosBuscados.Columns.Add(c1);
+            ProductosBuscados.Columns.Add(c2);
+            ProductosBuscados.Columns.Add(c3);
 
         }
     }

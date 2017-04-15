@@ -19,11 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:9090/cliente?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/servicio_web_master/ClientesController?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="cliente.xsd" MetadataType="Schema" ID="4ed93840-1735-4548-9ba7-6857747743b3" SourceId="1" SourceUrl="http://localhost:9090/cliente?xsd=1" />
-    <MetadataFile FileName="CtlClienteService.wsdl" MetadataType="Wsdl" ID="9a7084d2-0d44-4cf0-9b7a-c298912b0df5" SourceId="1" SourceUrl="http://localhost:9090/cliente?wsdl" />
+    <MetadataFile FileName="ClientesControllerService.wsdl" MetadataType="Wsdl" ID="9fcbb8b3-9730-43ce-a4b2-0dfc28cba1be" SourceId="1" SourceUrl="http://localhost:8080/servicio_web_master/ClientesController?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -34,11 +34,11 @@
             this.btnAgregarCarri = new System.Windows.Forms.Button();
             this.Total = new System.Windows.Forms.Label();
             this.txtTotalFac = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.ProductosBuscados = new System.Windows.Forms.DataGridView();
+            this.Carrito = new System.Windows.Forms.DataGridView();
             this.btnComprar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductosBuscados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Carrito)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -92,21 +92,21 @@
             this.txtTotalFac.Size = new System.Drawing.Size(94, 20);
             this.txtTotalFac.TabIndex = 5;
             // 
-            // dataGridView1
+            // ProductosBuscados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 105);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(249, 166);
-            this.dataGridView1.TabIndex = 6;
+            this.ProductosBuscados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductosBuscados.Location = new System.Drawing.Point(24, 105);
+            this.ProductosBuscados.Name = "ProductosBuscados";
+            this.ProductosBuscados.Size = new System.Drawing.Size(249, 166);
+            this.ProductosBuscados.TabIndex = 6;
             // 
-            // dataGridView2
+            // Carrito
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(503, 105);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(245, 166);
-            this.dataGridView2.TabIndex = 7;
+            this.Carrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Carrito.Location = new System.Drawing.Point(503, 105);
+            this.Carrito.Name = "Carrito";
+            this.Carrito.Size = new System.Drawing.Size(245, 166);
+            this.Carrito.TabIndex = 7;
             // 
             // btnComprar
             // 
@@ -123,8 +123,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 388);
             this.Controls.Add(this.btnComprar);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Carrito);
+            this.Controls.Add(this.ProductosBuscados);
             this.Controls.Add(this.txtTotalFac);
             this.Controls.Add(this.Total);
             this.Controls.Add(this.btnAgregarCarri);
@@ -134,8 +134,8 @@
             this.Name = "Compra";
             this.Text = "Compra";
             this.Load += new System.EventHandler(this.Compra_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductosBuscados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Carrito)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,8 +149,8 @@
         private System.Windows.Forms.Button btnAgregarCarri;
         private System.Windows.Forms.Label Total;
         private System.Windows.Forms.TextBox txtTotalFac;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView ProductosBuscados;
+        private System.Windows.Forms.DataGridView Carrito;
         private System.Windows.Forms.Button btnComprar;
     }
 }

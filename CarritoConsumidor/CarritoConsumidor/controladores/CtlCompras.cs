@@ -13,10 +13,11 @@ namespace CarritoConsumidor.controladores
         public producto[] listarProducto(String nombre)
         {
             ProductoControllerClient ctlPro = new ProductoControllerClient();
-            
-            producto[] listaProductos = ctlPro.operacionListarProductos(nombre);
+            Console.WriteLine(nombre);
+            producto[] listaProductos = new producto[10];
+            listaProductos = ctlPro.operacionListarProductos(nombre);       
 
-            if (listaProductos != null)
+            if (listaProductos.Length>0)
             {
                 return listaProductos;
             }

@@ -54,11 +54,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\ServiceCliente\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Service References\ServiceFactura\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,10 +134,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceCarrito\CarritoControllerService.wsdl" />
-    <None Include="Service References\ServiceCliente\CarritoConsumidor.ServiceCliente.operacionCrearResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceCliente\ClientesControllerService1.wsdl" />
     <None Include="Service References\ServiceFactura\CarritoConsumidor.ServiceFactura.crearCompraResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -162,6 +153,7 @@
     <None Include="Service References\ServiceLogin\CarritoConsumidor.ServiceLogin.usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceLogin\LoginControllerService.wsdl" />
     <None Include="Service References\ServiceLogin\LoginControllerService1.wsdl" />
     <None Include="Service References\ServiceProducto\CarritoConsumidor.ServiceProducto.operacionListarProductosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -170,13 +162,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceProducto\ProductoControllerService.wsdl" />
-    <None Include="Service References\ServicioCliente\CarritoConsumidor.ServicioCliente.operacionCrearClienteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServicioCliente\cliente.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServicioCliente\CtlClienteService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -186,13 +171,16 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceCarrito\" />
-    <WCFMetadataStorage Include="Service References\ServiceCliente\" />
     <WCFMetadataStorage Include="Service References\ServiceFactura\" />
     <WCFMetadataStorage Include="Service References\ServiceLogin\" />
     <WCFMetadataStorage Include="Service References\ServiceProducto\" />
     <WCFMetadataStorage Include="Service References\ServicioCliente\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\ServicioCliente\CarritoConsumidor.ServicioCliente.operacionCrearResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCliente\ClientesControllerService.wsdl" />
     <None Include="Service References\ServicioCliente\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -212,18 +200,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceCarrito\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceCliente\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceCliente\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceCliente\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

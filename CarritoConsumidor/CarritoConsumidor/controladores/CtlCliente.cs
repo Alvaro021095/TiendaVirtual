@@ -1,5 +1,4 @@
-﻿using CarritoConsumidor.ServiceCliente;
-using CarritoConsumidor.ServicioCliente;
+﻿using CarritoConsumidor.ServicioCliente;
 using System;
 using System.Collections.Generic;
 using System.Linq;
