@@ -14,8 +14,7 @@ namespace CarritoConsumidor.controladores
         {
             ProductoControllerClient ctlPro = new ProductoControllerClient();
             Console.WriteLine(nombre);
-            producto[] listaProductos = new producto[10];
-            listaProductos = ctlPro.operacionListarProductos(nombre);       
+            producto[] listaProductos = ctlPro.operacionListarProductos(nombre);       
 
             if (listaProductos.Length>0)
             {
