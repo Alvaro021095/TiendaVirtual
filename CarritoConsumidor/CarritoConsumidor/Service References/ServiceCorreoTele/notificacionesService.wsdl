@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.eam.edu.co/notificaciones" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="notificacionesService" targetNamespace="http://www.eam.edu.co/notificaciones" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://www.eam.edu.co/notificaciones" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="enviarMail" type="tns:enviarMail" />
+      <xs:element name="enviarMailResponse" type="tns:enviarMailResponse" />
+      <xs:element name="enviarSMS" type="tns:enviarSMS" />
+      <xs:element name="enviarSMSResponse" type="tns:enviarSMSResponse" />
+      <xs:complexType name="enviarMail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="correo" type="tns:mail" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="mail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="body" type="xs:string" />
+          <xs:element minOccurs="0" name="from" type="xs:string" />
+          <xs:element minOccurs="0" name="subject" type="xs:string" />
+          <xs:element minOccurs="0" name="to" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarMailResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RespuestaNotificacion" type="tns:respuestaNotificacion" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="respuestaNotificacion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigo" type="xs:string" />
+          <xs:element minOccurs="0" name="mensaje" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarSMS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sms" type="tns:sms" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sms">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="texto" type="xs:string" />
+          <xs:element minOccurs="0" name="to" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarSMSResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RespuestaNotificacion" type="tns:respuestaNotificacion" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="enviarSMS">
+    <wsdl:part name="parameters" element="tns:enviarSMS" />
+  </wsdl:message>
+  <wsdl:message name="enviarSMSResponse">
+    <wsdl:part name="parameters" element="tns:enviarSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="enviarMail">
+    <wsdl:part name="parameters" element="tns:enviarMail" />
+  </wsdl:message>
+  <wsdl:message name="enviarMailResponse">
+    <wsdl:part name="parameters" element="tns:enviarMailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="notificaciones">
+    <wsdl:operation name="enviarMail">
+      <wsdl:input name="enviarMail" message="tns:enviarMail" />
+      <wsdl:output name="enviarMailResponse" message="tns:enviarMailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="enviarSMS">
+      <wsdl:input name="enviarSMS" message="tns:enviarSMS" />
+      <wsdl:output name="enviarSMSResponse" message="tns:enviarSMSResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="notificacionesServiceSoapBinding" type="tns:notificaciones">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="enviarMail">
+      <soap:operation soapAction="enviarMail" style="document" />
+      <wsdl:input name="enviarMail">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="enviarMailResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarSMS">
+      <soap:operation soapAction="enviarSMS" style="document" />
+      <wsdl:input name="enviarSMS">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="enviarSMSResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="notificacionesService">
+    <wsdl:port name="notificacionesPort" binding="tns:notificacionesServiceSoapBinding">
+      <soap:address location="http://localhost:8080/notificaciones/notificacionesService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

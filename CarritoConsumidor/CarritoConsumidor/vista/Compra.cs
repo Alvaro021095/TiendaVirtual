@@ -88,56 +88,62 @@ namespace CarritoConsumidor.vista
         {
             try
             {
-            double total = 0.0;
+                double total = 0.0;
 
-            if (ProductosBuscados.CurrentRow.Cells["CantidadRequest"].Value != null)
-            {
-
-                cantidadInicial = (int)ProductosBuscados.CurrentRow.Cells["Cantidad"].Value;
-
-                int id = (int)ProductosBuscados.CurrentRow.Cells["Id"].Value;
-
-                //var objeto = ProductosBuscados.CurrentRow.Cells["CantidadRequest"].Value != null ? ProductosBuscados.CurrentRow.Cells["CantidadRequest"].Value : 0;
-                // var valorObjeto = ProductosBuscados.CurrentRow.Cells["Valor"].Value;
-                //var objetoCadena = ProductosBuscados.CurrentRow.Cells["Nombre"].Value;
-
-                cantidadRequerida = Convert.ToInt32(ProductosBuscados.CurrentRow.Cells["CantidadRequest"].Value != null ? ProductosBuscados.CurrentRow.Cells["CantidadRequest"].Value : 0);
-
-                double valor = (Convert.ToDouble(ProductosBuscados.CurrentRow.Cells["Valor"].Value)) * cantidadRequerida;
-
-                String nombre = Convert.ToString(ProductosBuscados.CurrentRow.Cells["Nombre"].Value);
-
-
-
-                if (validarProducto(id))
+                if (ProductosBuscados.CurrentRow.Cells["CantidadRequest"].Value != null)
                 {
 
-                    Carrito.Rows.Add(id, nombre,
-                   cantidadRequerida, valor);
+                    cantidadInicial = (int)ProductosBuscados.CurrentRow.Cells["Cantidad"].Value;
 
-                    ctlcarrito.adicionarCarrito(id, thisUser.id, cantidadRequerida,Convert.ToDecimal(valor));
+                    int id = (int)ProductosBuscados.CurrentRow.Cells["Id"].Value;
 
-                   
+                    //var objeto = ProductosBuscados.CurrentRow.Cells["CantidadRequest"].Value != null ? ProductosBuscados.CurrentRow.Cells["CantidadRequest"].Value : 0;
+                    // var valorObjeto = ProductosBuscados.CurrentRow.Cells["Valor"].Value;
+                    //var objetoCadena = ProductosBuscados.CurrentRow.Cells["Nombre"].Value;
+
+                    cantidadRequerida = Convert.ToInt32(ProductosBuscados.CurrentRow.Cells["CantidadRequest"].Value != null ? ProductosBuscados.CurrentRow.Cells["CantidadRequest"].Value : 0);
+
+                    if (cantidadRequerida > cantidadInicial)
+                    {
+                        MessageBox.Show("No puedes comprar lo que no hay.");
+                    }
+                    else
+                    {
+                        double valor = (Convert.ToDouble(ProductosBuscados.CurrentRow.Cells["Valor"].Value)) * cantidadRequerida;
+
+                        String nombre = Convert.ToString(ProductosBuscados.CurrentRow.Cells["Nombre"].Value);
+
+
+
+                        if (validarProducto(id))
+                        {
+
+                           Carrito.Rows.Add(id, nombre,
+                           cantidadRequerida, valor);
+
+                            ctlcarrito.adicionarCarrito(id, thisUser.id, cantidadRequerida, Convert.ToDecimal(valor));
+
+
+                        }
+
+                        foreach (DataGridViewRow row in Carrito.Rows)
+                        {
+
+
+                            total += Convert.ToDouble(row.Cells["ValorCompra"].Value);
+
+                        }
+
+                        txtTotalFac.Text = total + "";
+
+                    }
                 }
-
-                foreach (DataGridViewRow row in Carrito.Rows)
-                {
-
-
-                    total += Convert.ToDouble(row.Cells["ValorCompra"].Value);
-
-                }
-
-                txtTotalFac.Text = total + "";
-
-            }
 
             }
             catch (Exception exception)
             {
-               
-                MessageBox.Show("Por Favor seleccion o busque un producto");
 
+                MessageBox.Show("Por Favor seleccion o busque un producto");
             }
 
         }
@@ -167,6 +173,11 @@ namespace CarritoConsumidor.vista
         private void ProductosBuscados_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             //Console.WriteLine("entre");
+        }
+
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
