@@ -103,40 +103,37 @@ namespace CarritoConsumidor.vista
 
                     cantidadRequerida = Convert.ToInt32(ProductosBuscados.CurrentRow.Cells["CantidadRequest"].Value != null ? ProductosBuscados.CurrentRow.Cells["CantidadRequest"].Value : 0);
 
-                    if (cantidadRequerida > cantidadInicial)
-                    {
-                        MessageBox.Show("No puedes comprar lo que no hay.");
-                    }
-                    else
-                    {
                         double valor = (Convert.ToDouble(ProductosBuscados.CurrentRow.Cells["Valor"].Value)) * cantidadRequerida;
 
                         String nombre = Convert.ToString(ProductosBuscados.CurrentRow.Cells["Nombre"].Value);
 
-
-
                         if (validarProducto(id))
                         {
 
-                           Carrito.Rows.Add(id, nombre,
-                           cantidadRequerida, valor);
+                            bool result = ctlcarrito.adicionarCarrito(id, thisUser.id, cantidadRequerida, Convert.ToDecimal(valor));
 
-                            ctlcarrito.adicionarCarrito(id, thisUser.id, cantidadRequerida, Convert.ToDecimal(valor));
+                            if (result)
+                            {
 
+                                Carrito.Rows.Add(id, nombre, cantidadRequerida, valor);
+                                foreach (DataGridViewRow row in Carrito.Rows)
+                                {
 
-                        }
+                                    total += Convert.ToDouble(row.Cells["ValorCompra"].Value);
 
-                        foreach (DataGridViewRow row in Carrito.Rows)
-                        {
+                                }
 
+                            }
+                            else
+                            {
 
-                            total += Convert.ToDouble(row.Cells["ValorCompra"].Value);
+                                MessageBox.Show("No puedes comprar lo que no hay.");
+                            }
 
                         }
 
                         txtTotalFac.Text = total + "";
-
-                    }
+                    
                 }
 
             }

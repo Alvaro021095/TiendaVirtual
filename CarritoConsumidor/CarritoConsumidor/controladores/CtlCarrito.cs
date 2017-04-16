@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace CarritoConsumidor.controladores
 {
-    class CtlCarrito
+  public class CtlCarrito
     {
 
-        public void adicionarCarrito(int idProducto, int idUsuario, int cantidad, decimal valorTotal)
+        public bool adicionarCarrito(int idProducto, int idUsuario, int cantidad, decimal valorTotal)
         {
             productoDTO product = new productoDTO();
 
@@ -26,13 +26,15 @@ namespace CarritoConsumidor.controladores
             carro.cantidad = cantidad +"";
             carro.productoDTO = product;
             carro.usuarioDTO = users;
-            //carro.valorTotal = valorTotal +"";
+            carro.valorTotal = valorTotal +"";
 
             Console.WriteLine(carro.cantidad + " " + carro.productoDTO.id +" "+carro.usuarioDTO.id);
 
             CarritoControllerClient wsCarrito = new CarritoControllerClient();
 
-            wsCarrito.operacionAgregarCarrito(carro);
+           bool resultado = wsCarrito.operacionAgregarCarrito(carro);
+
+           return resultado;
 
         }
 
