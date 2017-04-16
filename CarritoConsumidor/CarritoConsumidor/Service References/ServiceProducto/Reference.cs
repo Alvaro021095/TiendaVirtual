@@ -26,7 +26,7 @@ namespace CarritoConsumidor.ServiceProducto {
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -40,6 +40,10 @@ namespace CarritoConsumidor.ServiceProducto {
         private int idField;
         
         private bool idFieldSpecified;
+        
+        private int idAuxField;
+        
+        private bool idAuxFieldSpecified;
         
         private string nombreField;
         
@@ -97,6 +101,30 @@ namespace CarritoConsumidor.ServiceProducto {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public int idAux {
+            get {
+                return this.idAuxField;
+            }
+            set {
+                this.idAuxField = value;
+                this.RaisePropertyChanged("idAux");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool idAuxSpecified {
+            get {
+                return this.idAuxFieldSpecified;
+            }
+            set {
+                this.idAuxFieldSpecified = value;
+                this.RaisePropertyChanged("idAuxSpecified");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public string nombre {
             get {
                 return this.nombreField;
@@ -108,7 +136,7 @@ namespace CarritoConsumidor.ServiceProducto {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public decimal valor {
             get {
                 return this.valorField;

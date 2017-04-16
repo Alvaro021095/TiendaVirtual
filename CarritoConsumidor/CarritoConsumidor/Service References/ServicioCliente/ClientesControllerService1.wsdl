@@ -54,7 +54,7 @@
   </wsdl:binding>
   <wsdl:service name="ClientesControllerService">
     <wsdl:port name="CliCtlPort" binding="tns:ClientesControllerServiceSoapBinding">
-      <soap:address location="http://localhost:8080/servicio_web_master/ClientesController" />
+      <soap:address location="http://DESKTOP-VIRQCT0:8089/servicio_web_master/ClientesController" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

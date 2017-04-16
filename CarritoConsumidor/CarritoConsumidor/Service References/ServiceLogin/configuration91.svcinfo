@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="JqpGMKe8cFuJDFKjus8ayVvAlho=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="VsAO37/FQNF8F/TEHC7DwuszPII=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="LoginControllerServiceSoapBinding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="LogCtlPort" contract="ServiceLogin.LoginController" bindingType="basicHttpBinding" address="http://localhost:8080/servicio_web_master/LoginController" bindingConfiguration="LoginControllerServiceSoapBinding">
+    <endpoint name="LogCtlPort" contract="ServiceLogin.LoginController" bindingType="basicHttpBinding" address="http://desktop-virqct0:8089/servicio_web_master/LoginController" bindingConfiguration="LoginControllerServiceSoapBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8080/servicio_web_master/LoginController</serializedValue>
+          <serializedValue>http://DESKTOP-VIRQCT0:8089/servicio_web_master/LoginController</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

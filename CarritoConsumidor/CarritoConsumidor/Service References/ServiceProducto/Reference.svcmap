@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/servicio_web_master/ProductoController?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.11.103:8089/servicio_web_master/ProductoController?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ProductoControllerService.wsdl" MetadataType="Wsdl" ID="b23dab5d-44e9-4114-bc1c-711f356d30a5" SourceId="1" SourceUrl="http://localhost:8080/servicio_web_master/ProductoController?wsdl" />
+    <MetadataFile FileName="ProductoControllerService1.wsdl" MetadataType="Wsdl" ID="59d197ae-85eb-474b-b7f3-4562f4b1f624" SourceId="1" SourceUrl="http://192.168.11.103:8089/servicio_web_master/ProductoController?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

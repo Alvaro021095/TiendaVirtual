@@ -23,7 +23,7 @@
           <xs:element minOccurs="0" name="id" type="xs:int" />
           <xs:element minOccurs="0" name="producto" type="tns:producto" />
           <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
-          <xs:element minOccurs="0" name="valorTotal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="valorTotal" type="xs:double" />
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="producto">
@@ -64,7 +64,29 @@
       </xs:complexType>
       <xs:complexType name="operacionAgregarCarrito">
         <xs:sequence>
-          <xs:element minOccurs="0" name="carrito" type="tns:carrito" />
+          <xs:element minOccurs="0" name="carritoDTO" type="tns:carritoDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="carritoDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cantidad" type="xs:string" />
+          <xs:element minOccurs="0" name="productoDTO" type="tns:productoDTO" />
+          <xs:element minOccurs="0" name="usuarioDTO" type="tns:usuarioDTO" />
+          <xs:element minOccurs="0" name="valorTotal" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productoDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cantidad" type="xs:string" />
+          <xs:element minOccurs="0" name="id" type="xs:string" />
+          <xs:element minOccurs="0" name="nombre" type="xs:string" />
+          <xs:element minOccurs="0" name="valor" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="usuarioDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:string" />
+          <xs:element minOccurs="0" name="nombreUsuario" type="xs:string" />
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="operacionAgregarCarritoResponse">
@@ -138,7 +160,7 @@
   </wsdl:binding>
   <wsdl:service name="CarritoControllerService">
     <wsdl:port name="CarriControPort" binding="tns:CarritoControllerServiceSoapBinding">
-      <soap:address location="http://localhost:8080/servicio_web_master/CarritoController" />
+      <soap:address location="http://DESKTOP-VIRQCT0:8089/servicio_web_master/CarritoController" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

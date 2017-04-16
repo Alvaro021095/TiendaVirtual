@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/servicio_web_master/CarritoController?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.11.103:8089/servicio_web_master/CarritoController?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CarritoControllerService.wsdl" MetadataType="Wsdl" ID="d422f628-8327-4315-ad4a-92279f9a837e" SourceId="1" SourceUrl="http://localhost:8080/servicio_web_master/CarritoController?wsdl" />
+    <MetadataFile FileName="CarritoControllerService1.wsdl" MetadataType="Wsdl" ID="7097693c-9f85-4043-ab29-42326910787f" SourceId="1" SourceUrl="http://192.168.11.103:8089/servicio_web_master/CarritoController?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

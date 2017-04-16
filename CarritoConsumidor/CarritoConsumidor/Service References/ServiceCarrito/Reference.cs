@@ -44,7 +44,7 @@ namespace CarritoConsumidor.ServiceCarrito {
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -67,7 +67,7 @@ namespace CarritoConsumidor.ServiceCarrito {
         
         private usuario usuarioField;
         
-        private decimal valorTotalField;
+        private double valorTotalField;
         
         private bool valorTotalFieldSpecified;
         
@@ -169,7 +169,7 @@ namespace CarritoConsumidor.ServiceCarrito {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public decimal valorTotal {
+        public double valorTotal {
             get {
                 return this.valorTotalField;
             }
@@ -202,7 +202,7 @@ namespace CarritoConsumidor.ServiceCarrito {
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -318,7 +318,215 @@ namespace CarritoConsumidor.ServiceCarrito {
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://co.edu.eam.ingsoft.distribuidos")]
+    public partial class usuarioDTO : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string idField;
+        
+        private string nombreUsuarioField;
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string nombreUsuario {
+            get {
+                return this.nombreUsuarioField;
+            }
+            set {
+                this.nombreUsuarioField = value;
+                this.RaisePropertyChanged("nombreUsuario");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <comentarios/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://co.edu.eam.ingsoft.distribuidos")]
+    public partial class productoDTO : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cantidadField;
+        
+        private string idField;
+        
+        private string nombreField;
+        
+        private decimal valorField;
+        
+        private bool valorFieldSpecified;
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string cantidad {
+            get {
+                return this.cantidadField;
+            }
+            set {
+                this.cantidadField = value;
+                this.RaisePropertyChanged("cantidad");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string nombre {
+            get {
+                return this.nombreField;
+            }
+            set {
+                this.nombreField = value;
+                this.RaisePropertyChanged("nombre");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public decimal valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+                this.RaisePropertyChanged("valor");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool valorSpecified {
+            get {
+                return this.valorFieldSpecified;
+            }
+            set {
+                this.valorFieldSpecified = value;
+                this.RaisePropertyChanged("valorSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <comentarios/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://co.edu.eam.ingsoft.distribuidos")]
+    public partial class carritoDTO : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cantidadField;
+        
+        private productoDTO productoDTOField;
+        
+        private usuarioDTO usuarioDTOField;
+        
+        private string valorTotalField;
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string cantidad {
+            get {
+                return this.cantidadField;
+            }
+            set {
+                this.cantidadField = value;
+                this.RaisePropertyChanged("cantidad");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public productoDTO productoDTO {
+            get {
+                return this.productoDTOField;
+            }
+            set {
+                this.productoDTOField = value;
+                this.RaisePropertyChanged("productoDTO");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public usuarioDTO usuarioDTO {
+            get {
+                return this.usuarioDTOField;
+            }
+            set {
+                this.usuarioDTOField = value;
+                this.RaisePropertyChanged("usuarioDTO");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string valorTotal {
+            get {
+                return this.valorTotalField;
+            }
+            set {
+                this.valorTotalField = value;
+                this.RaisePropertyChanged("valorTotal");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <comentarios/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -434,7 +642,7 @@ namespace CarritoConsumidor.ServiceCarrito {
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -593,13 +801,13 @@ namespace CarritoConsumidor.ServiceCarrito {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://co.edu.eam.ingsoft.distribuidos", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public CarritoConsumidor.ServiceCarrito.carrito carrito;
+        public CarritoConsumidor.ServiceCarrito.carritoDTO carritoDTO;
         
         public operacionAgregarCarrito() {
         }
         
-        public operacionAgregarCarrito(CarritoConsumidor.ServiceCarrito.carrito carrito) {
-            this.carrito = carrito;
+        public operacionAgregarCarrito(CarritoConsumidor.ServiceCarrito.carritoDTO carritoDTO) {
+            this.carritoDTO = carritoDTO;
         }
     }
     
@@ -697,9 +905,9 @@ namespace CarritoConsumidor.ServiceCarrito {
             return base.Channel.operacionAgregarCarrito(request);
         }
         
-        public bool operacionAgregarCarrito(CarritoConsumidor.ServiceCarrito.carrito carrito) {
+        public bool operacionAgregarCarrito(CarritoConsumidor.ServiceCarrito.carritoDTO carritoDTO) {
             CarritoConsumidor.ServiceCarrito.operacionAgregarCarrito inValue = new CarritoConsumidor.ServiceCarrito.operacionAgregarCarrito();
-            inValue.carrito = carrito;
+            inValue.carritoDTO = carritoDTO;
             CarritoConsumidor.ServiceCarrito.operacionAgregarCarritoResponse retVal = ((CarritoConsumidor.ServiceCarrito.CarritoController)(this)).operacionAgregarCarrito(inValue);
             return retVal.@return;
         }
@@ -709,9 +917,9 @@ namespace CarritoConsumidor.ServiceCarrito {
             return base.Channel.operacionAgregarCarritoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CarritoConsumidor.ServiceCarrito.operacionAgregarCarritoResponse> operacionAgregarCarritoAsync(CarritoConsumidor.ServiceCarrito.carrito carrito) {
+        public System.Threading.Tasks.Task<CarritoConsumidor.ServiceCarrito.operacionAgregarCarritoResponse> operacionAgregarCarritoAsync(CarritoConsumidor.ServiceCarrito.carritoDTO carritoDTO) {
             CarritoConsumidor.ServiceCarrito.operacionAgregarCarrito inValue = new CarritoConsumidor.ServiceCarrito.operacionAgregarCarrito();
-            inValue.carrito = carrito;
+            inValue.carritoDTO = carritoDTO;
             return ((CarritoConsumidor.ServiceCarrito.CarritoController)(this)).operacionAgregarCarritoAsync(inValue);
         }
     }

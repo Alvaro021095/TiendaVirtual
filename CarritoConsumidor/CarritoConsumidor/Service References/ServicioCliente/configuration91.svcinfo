@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="rS5hb9S6DifeImOLKsm7cYeORWo=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="avPTvzR+gSnHsxytK2EE+3PCE0U=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ClientesControllerServiceSoapBinding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CliCtlPort" contract="ServicioCliente.ClientesController" bindingType="basicHttpBinding" address="http://localhost:8080/servicio_web_master/ClientesController" bindingConfiguration="ClientesControllerServiceSoapBinding">
+    <endpoint name="CliCtlPort" contract="ServicioCliente.ClientesController" bindingType="basicHttpBinding" address="http://desktop-virqct0:8089/servicio_web_master/ClientesController" bindingConfiguration="ClientesControllerServiceSoapBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8080/servicio_web_master/ClientesController</serializedValue>
+          <serializedValue>http://DESKTOP-VIRQCT0:8089/servicio_web_master/ClientesController</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

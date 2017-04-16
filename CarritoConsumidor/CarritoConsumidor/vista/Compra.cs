@@ -115,7 +115,7 @@ namespace CarritoConsumidor.vista
                     Carrito.Rows.Add(id, nombre,
                    cantidadRequerida, valor);
 
-                    ctlcarrito.adicionarCarrito(id, thisUser.id, cantidadRequerida);
+                    ctlcarrito.adicionarCarrito(id, thisUser.id, cantidadRequerida,Convert.ToDecimal(valor));
 
                    
                 }

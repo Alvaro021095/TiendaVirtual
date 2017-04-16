@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="IgYtVqJ/D4aqoHulRWzruSxthuc=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="ZxLDjcLNu7aRWdW/p+HXS0JDSaA=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="CarritoControllerServiceSoapBinding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CarriControPort" contract="ServiceCarrito.CarritoController" bindingType="basicHttpBinding" address="http://localhost:8080/servicio_web_master/CarritoController" bindingConfiguration="CarritoControllerServiceSoapBinding">
+    <endpoint name="CarriControPort" contract="ServiceCarrito.CarritoController" bindingType="basicHttpBinding" address="http://desktop-virqct0:8089/servicio_web_master/CarritoController" bindingConfiguration="CarritoControllerServiceSoapBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8080/servicio_web_master/CarritoController</serializedValue>
+          <serializedValue>http://DESKTOP-VIRQCT0:8089/servicio_web_master/CarritoController</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

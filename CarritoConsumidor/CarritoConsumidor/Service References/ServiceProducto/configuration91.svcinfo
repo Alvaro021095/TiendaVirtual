@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="ZRJDdikgOtlizqdWmFjg9B5tv44=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="ECQBEhYiWlcnOYvTMqkySt/FGSw=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ProductoControllerServiceSoapBinding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ProCtlPort" contract="ServiceProducto.ProductoController" bindingType="basicHttpBinding" address="http://localhost:8080/servicio_web_master/ProductoController" bindingConfiguration="ProductoControllerServiceSoapBinding">
+    <endpoint name="ProCtlPort" contract="ServiceProducto.ProductoController" bindingType="basicHttpBinding" address="http://desktop-virqct0:8089/servicio_web_master/ProductoController" bindingConfiguration="ProductoControllerServiceSoapBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8080/servicio_web_master/ProductoController</serializedValue>
+          <serializedValue>http://DESKTOP-VIRQCT0:8089/servicio_web_master/ProductoController</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
