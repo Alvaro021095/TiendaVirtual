@@ -17,6 +17,7 @@ namespace CarritoConsumidor.vista
     {
         usuario thisUser;
         public CtlCompras ctlCom;
+        private CtlFactura ctlFactura;
         private CtlCarrito ctlcarrito;
         int cantidadInicial;
         int cantidadRequerida = 0;
@@ -27,7 +28,9 @@ namespace CarritoConsumidor.vista
             this.thisUser = users;
             ctlCom = new CtlCompras();
             ctlcarrito = new CtlCarrito();
+            ctlFactura = new CtlFactura();
             cantidadInicial = 0;
+            listarCarrito();
 
         }
 
@@ -116,12 +119,7 @@ namespace CarritoConsumidor.vista
                             {
 
                                 Carrito.Rows.Add(id, nombre, cantidadRequerida, valor);
-                                foreach (DataGridViewRow row in Carrito.Rows)
-                                {
-
-                                    total += Convert.ToDouble(row.Cells["ValorCompra"].Value);
-
-                                }
+                                
 
                             }
                             else
@@ -129,6 +127,12 @@ namespace CarritoConsumidor.vista
 
                                 MessageBox.Show("No puedes comprar lo que no hay.");
                             }
+
+                        }
+                        foreach (DataGridViewRow row in Carrito.Rows)
+                        {
+
+                            total += Convert.ToDouble(row.Cells["ValorCompra"].Value);
 
                         }
 
@@ -145,9 +149,26 @@ namespace CarritoConsumidor.vista
 
         }
 
-        public bool validarProducto(int id)
+        public void listarCarrito()
         {
 
+           CarritoConsumidor.ServiceCarrito.carrito [] lista =  ctlcarrito.listarCarrito(thisUser.id);
+
+           if (lista != null)
+           {
+               for (int i = 0; i < lista.Length; i++)
+               {
+
+                   Carrito.Rows.Add(lista.ElementAt(i).producto.id, lista.ElementAt(i).producto.nombre,
+                        lista.ElementAt(i).cantidad,lista.ElementAt(i).valorTotal);
+
+               }
+           }
+
+        }
+
+        public bool validarProducto(int id)
+        {
 
             foreach (DataGridViewRow row in Carrito.Rows)
             {
@@ -174,7 +195,28 @@ namespace CarritoConsumidor.vista
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
+            List<CarritoConsumidor.ServiceFactura.itemsDTO> items = new List<ServiceFactura.itemsDTO>();
 
+            foreach (DataGridViewRow row in Carrito.Rows)
+            {
+                CarritoConsumidor.ServiceFactura.itemsDTO item = new ServiceFactura.itemsDTO();
+
+                var objCantidad =  row.Cells["CantidadCompra"].Value;
+
+                var objId = row.Cells["IdCompra"].Value;
+
+                var objValor = row.Cells["ValorCompra"].Value;
+
+                item.cantidad = Convert.ToString(objCantidad);
+                item.id = Convert.ToString(objId);
+                item.valorTotal = Convert.ToString(objValor);
+
+                items.Add(item);
+
+            }
+
+            ctlFactura.crearCompra(thisUser.id, Convert.ToInt32(txtTotalFac.Text),items);
+            
         }
     }
 }

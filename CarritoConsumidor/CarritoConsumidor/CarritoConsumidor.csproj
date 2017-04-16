@@ -49,6 +49,7 @@
     <Compile Include="controladores\CtlCarrito.cs" />
     <Compile Include="controladores\CtlCliente.cs" />
     <Compile Include="controladores\CtlCompras.cs" />
+    <Compile Include="controladores\CtlFactura.cs" />
     <Compile Include="controladores\CtlLogin.cs" />
     <Compile Include="Service References\ServiceCarrito\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -130,10 +131,10 @@
     <None Include="Service References\ServiceCarrito\CarritoConsumidor.ServiceCarrito.carrito.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceCarrito\CarritoConsumidor.ServiceCarrito.listarCarritoResponse.datasource">
+    <None Include="Service References\ServiceCarrito\CarritoConsumidor.ServiceCarrito.operacionAgregarCarritoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceCarrito\CarritoConsumidor.ServiceCarrito.operacionAgregarCarritoResponse.datasource">
+    <None Include="Service References\ServiceCarrito\CarritoConsumidor.ServiceCarrito.operacionListarCarritoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceCarrito\CarritoConsumidor.ServiceCarrito.validarProductosResponse.datasource">

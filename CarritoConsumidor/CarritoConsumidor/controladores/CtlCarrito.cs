@@ -38,5 +38,17 @@ namespace CarritoConsumidor.controladores
 
         }
 
+        public carrito[] listarCarrito(int idUsuario)
+        {
+
+            CarritoControllerClient wsCarrito = new CarritoControllerClient();
+
+            carrito [] resultado = wsCarrito.operacionListarCarrito(Convert.ToString(idUsuario));
+
+            return resultado;
+
+
+        }
+
     }
 }
