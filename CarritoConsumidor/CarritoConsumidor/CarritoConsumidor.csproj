@@ -55,6 +55,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ServiceCorreoTele\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ServiceFactura\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,7 +139,17 @@
     <None Include="Service References\ServiceCarrito\CarritoConsumidor.ServiceCarrito.validarProductosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceCarrito\CarritoControllerService1.wsdl" />
+    <None Include="Service References\ServiceCarrito\CarritoControllerService.wsdl" />
+    <None Include="Service References\ServiceCorreoTele\CarritoConsumidor.ServiceCorreoTele.enviarMailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceCorreoTele\CarritoConsumidor.ServiceCorreoTele.enviarSMSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceCorreoTele\CarritoConsumidor.ServiceCorreoTele.respuestaNotificacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceCorreoTele\notificacionesService.wsdl" />
     <None Include="Service References\ServiceFactura\CarritoConsumidor.ServiceFactura.crearCompraResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -154,8 +169,8 @@
     <None Include="Service References\ServiceLogin\CarritoConsumidor.ServiceLogin.usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceLogin\LoginControllerService.wsdl" />
     <None Include="Service References\ServiceLogin\LoginControllerService1.wsdl" />
-    <None Include="Service References\ServiceLogin\LoginControllerService11.wsdl" />
     <None Include="Service References\ServiceProducto\CarritoConsumidor.ServiceProducto.operacionListarProductosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -171,17 +186,18 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceCarrito\" />
+    <WCFMetadataStorage Include="Service References\ServiceCorreoTele\" />
     <WCFMetadataStorage Include="Service References\ServiceFactura\" />
     <WCFMetadataStorage Include="Service References\ServiceLogin\" />
     <WCFMetadataStorage Include="Service References\ServiceProducto\" />
     <WCFMetadataStorage Include="Service References\ServicioCliente\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceProducto\ProductoControllerService1.wsdl" />
+    <None Include="Service References\ServiceProducto\ProductoControllerService.wsdl" />
     <None Include="Service References\ServicioCliente\CarritoConsumidor.ServicioCliente.operacionCrearResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServicioCliente\ClientesControllerService1.wsdl" />
+    <None Include="Service References\ServicioCliente\ClientesControllerService.wsdl" />
     <None Include="Service References\ServicioCliente\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -237,6 +253,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceProducto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceCorreoTele\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceCorreoTele\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceCorreoTele\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

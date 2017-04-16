@@ -26,7 +26,7 @@ namespace CarritoConsumidor.controladores
             carro.cantidad = cantidad +"";
             carro.productoDTO = product;
             carro.usuarioDTO = users;
-            carro.valorTotal = valorTotal +"";
+            //carro.valorTotal = valorTotal +"";
 
             Console.WriteLine(carro.cantidad + " " + carro.productoDTO.id +" "+carro.usuarioDTO.id);
 
