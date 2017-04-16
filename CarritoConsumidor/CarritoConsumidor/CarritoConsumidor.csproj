@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controladores\CtlCarrito.cs" />
     <Compile Include="controladores\CtlCliente.cs" />
     <Compile Include="controladores\CtlCompras.cs" />
     <Compile Include="controladores\CtlLogin.cs" />
@@ -133,7 +134,7 @@
     <None Include="Service References\ServiceCarrito\CarritoConsumidor.ServiceCarrito.validarProductosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceCarrito\CarritoControllerService.wsdl" />
+    <None Include="Service References\ServiceCarrito\CarritoControllerService1.wsdl" />
     <None Include="Service References\ServiceFactura\CarritoConsumidor.ServiceFactura.crearCompraResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -153,15 +154,14 @@
     <None Include="Service References\ServiceLogin\CarritoConsumidor.ServiceLogin.usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceLogin\LoginControllerService.wsdl" />
     <None Include="Service References\ServiceLogin\LoginControllerService1.wsdl" />
+    <None Include="Service References\ServiceLogin\LoginControllerService11.wsdl" />
     <None Include="Service References\ServiceProducto\CarritoConsumidor.ServiceProducto.operacionListarProductosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceProducto\CarritoConsumidor.ServiceProducto.producto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceProducto\ProductoControllerService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -177,10 +177,11 @@
     <WCFMetadataStorage Include="Service References\ServicioCliente\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\ServiceProducto\ProductoControllerService1.wsdl" />
     <None Include="Service References\ServicioCliente\CarritoConsumidor.ServicioCliente.operacionCrearResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServicioCliente\ClientesControllerService.wsdl" />
+    <None Include="Service References\ServicioCliente\ClientesControllerService1.wsdl" />
     <None Include="Service References\ServicioCliente\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
