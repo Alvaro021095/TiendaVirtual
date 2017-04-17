@@ -34,7 +34,7 @@ namespace CarritoConsumidor.vista
             //ctlNoti = new CtlNotificar();
             cantidadInicial = 0;
             listarCarrito();
-
+            txtTotalFac.Enabled=false;
         }
 
         private void btnBuscarPro_Click(object sender, EventArgs e)
@@ -70,23 +70,6 @@ namespace CarritoConsumidor.vista
 
         private void Compra_Load(object sender, EventArgs e)
         {
-
-            //DataGridViewTextBoxColumn c1 = new DataGridViewTextBoxColumn();
-            //c1.HeaderText = "Nombree";
-            //c1.Width = 50;
-
-
-            //DataGridViewTextBoxColumn c2 = new DataGridViewTextBoxColumn();
-            //c2.HeaderText = "Valor";
-            //c2.Width = 50;
-
-            //DataGridViewTextBoxColumn c3 = new DataGridViewTextBoxColumn();
-            //c3.HeaderText = "Cantidad";
-            //c3.Width = 50;
-
-            //ProductosBuscados.Columns.Add(c1);
-            //ProductosBuscados.Columns.Add(c2);
-            //ProductosBuscados.Columns.Add(c3);
 
         }
 
@@ -156,7 +139,7 @@ namespace CarritoConsumidor.vista
         {
 
            CarritoConsumidor.ServiceCarrito.carrito [] lista =  ctlcarrito.listarCarrito(thisUser.id);
-
+           decimal total = 0;
            if (lista != null)
            {
                for (int i = 0; i < lista.Length; i++)
@@ -164,9 +147,10 @@ namespace CarritoConsumidor.vista
 
                    Carrito.Rows.Add(lista.ElementAt(i).producto.id, lista.ElementAt(i).producto.nombre,
                         lista.ElementAt(i).cantidad,lista.ElementAt(i).valorTotal);
-
+                   total = total + (lista.ElementAt(i).producto.valor*lista.ElementAt(i).cantidad);
                }
            }
+           txtTotalFac.Text = ""+total;
 
         }
 
@@ -193,83 +177,116 @@ namespace CarritoConsumidor.vista
 
         private void ProductosBuscados_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            //Console.WriteLine("entre");
+            
         }
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-            List<CarritoConsumidor.ServiceFactura.itemsDTO> items = new List<ServiceFactura.itemsDTO>();
+           if(!txtTotalFac.Text.Equals("")){
+               List<CarritoConsumidor.ServiceFactura.itemsDTO> items = new List<ServiceFactura.itemsDTO>();
 
-            String productos = "";
-            String total = txtTotalFac.Text;
+               String productos = "";
+               String total = txtTotalFac.Text;
 
-            foreach (DataGridViewRow row in Carrito.Rows)
-            {
-                CarritoConsumidor.ServiceFactura.itemsDTO item = new ServiceFactura.itemsDTO();
+               foreach (DataGridViewRow row in Carrito.Rows)
+               {
+                   CarritoConsumidor.ServiceFactura.itemsDTO item = new ServiceFactura.itemsDTO();
 
-                String objNombre = (String)row.Cells["NombreCompra"].Value;
+                   String objNombre = (String)row.Cells["NombreCompra"].Value;
 
-                var objCantidad =  row.Cells["CantidadCompra"].Value;
+                   var objCantidad = row.Cells["CantidadCompra"].Value;
 
-                var objId = row.Cells["IdCompra"].Value;
+                   var objId = row.Cells["IdCompra"].Value;
 
-                var objValor = row.Cells["ValorCompra"].Value;
+                   var objValor = row.Cells["ValorCompra"].Value;
 
-                item.cantidad = Convert.ToString(objCantidad);
-                item.id = Convert.ToString(objId);
-                item.valorTotal = Convert.ToString(objValor);
+                   item.cantidad = Convert.ToString(objCantidad);
+                   item.id = Convert.ToString(objId);
+                   item.valorTotal = Convert.ToString(objValor);
 
-                items.Add(item);
-                productos += item.cantidad + " " + objNombre;
-            }
+                   items.Add(item);
+                   productos += item.cantidad + " " + objNombre;
+               }
 
-            for (int i = 0; i<items.Count;i++ )
-            {
-                if(items.ElementAt(i).id.Equals("")){
-                    items.Remove((items.ElementAt(i)));
-                }
-            }
-            
-
-            String resul = ctlFactura.crearCompra(thisUser.id,Convert.ToDouble(txtTotalFac.Text),items);
-
-            if (resul.Equals("Exito"))
-            {
-                MessageBox.Show("si");
-                notificacionesService not = new notificacionesService();
-                not.Url = "http://104.197.238.134:8080/notificaciones/notificacionesService";
-                mail m = new mail();
-                m.body = "Señor(a) "+ thisUser.cliente.nombre+ " "+thisUser.cliente.apellido+
-                    " le confirmamos que usted a realizado la compra de los siguietes productos: "+
-                    productos+ " y su costo total es de: "+ total;
-                m.from = "tienda@gmail.com";
-                m.subject = "TIENDA";
-                m.to = thisUser.cliente.correo;
-
-                sms s = new sms();
-                s.texto = "Señor(a) "+thisUser.cliente.nombre+ 
-                    " a realizado una compra por el valor de: "+total;
-                s.to = thisUser.cliente.telefono;
-
-                not.enviarSMS(s);
-                not.enviarMail(m);
+               for (int i = 0; i < items.Count; i++)
+               {
+                   if (items.ElementAt(i).id.Equals(""))
+                   {
+                       items.Remove((items.ElementAt(i)));
+                   }
+               }
 
 
-                //desde aqui
+               String resul = ctlFactura.crearCompra(thisUser.id, Convert.ToDouble(txtTotalFac.Text), items);
 
+               if (resul.Equals("Exito"))
+               {
+                   MessageBox.Show("Exito en la compra");
+                   notificacionesService not = new notificacionesService();
+                   not.Url = "http://104.197.238.134:8080/notificaciones/notificacionesService";
+                   mail m = new mail();
+                   m.body = "Señor(a) " + thisUser.cliente.nombre + " " + thisUser.cliente.apellido +
+                       " le confirmamos que usted a realizado la compra de los siguietes productos: " +
+                       productos + " y su costo total es de: " + total;
+                   m.from = "tienda@gmail.com";
+                   m.subject = "TIENDA";
+                   m.to = thisUser.cliente.correo;
 
-            }
-            else
-            {
-                MessageBox.Show("No se pudo realizar la compra");
-            }
+                   sms s = new sms();
+                   s.texto = "Señor(a) " + thisUser.cliente.nombre +
+                       " a realizado una compra por el valor de: " + total;
+                   s.to = thisUser.cliente.telefono;
 
+                   not.enviarSMS(s);
+                   not.enviarMail(m);
+                   /*
+                    * Se refresca la tabla de productos buscados 
+                    * Se pone el total del valor en 0
+                    * Se limpia la tabla del carrito
+                    * */
+                   refrescar(txtNombrePro.Text);
+                   txtTotalFac.Text = "0";
+                   Carrito.Rows.Clear();
+
+               }
+               else
+               {
+                   MessageBox.Show("No se pudo realizar la compra");
+               }
+           }
+           else
+           {
+               MessageBox.Show("No hay un valor total");
+           }
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
            
+        }
+
+        public void refrescar(String nombree)
+        {
+            producto[] listaDeProdcutosDeNuevo = ctlCom.listarProducto(nombree);
+            if (ProductosBuscados != null)
+            {
+                ProductosBuscados.Rows.Clear();
+            }
+
+            if (listaDeProdcutosDeNuevo != null)
+            {
+                for (int i = 0; i < listaDeProdcutosDeNuevo.Length; i++)
+                {
+
+                    ProductosBuscados.Rows.Add(listaDeProdcutosDeNuevo.ElementAt(i).id, listaDeProdcutosDeNuevo.ElementAt(i).nombre,
+                        listaDeProdcutosDeNuevo.ElementAt(i).valor, listaDeProdcutosDeNuevo.ElementAt(i).cantidad);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No existe el producto");
+            }
         }
     }
 }
