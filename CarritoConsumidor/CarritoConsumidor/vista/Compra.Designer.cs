@@ -152,7 +152,7 @@
             this.ValorCompra});
             this.Carrito.Location = new System.Drawing.Point(26, 255);
             this.Carrito.Name = "Carrito";
-            this.Carrito.Size = new System.Drawing.Size(443, 77);
+            this.Carrito.Size = new System.Drawing.Size(442, 163);
             this.Carrito.TabIndex = 7;
             // 
             // IdCompra
@@ -189,7 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 344);
+            this.ClientSize = new System.Drawing.Size(653, 430);
             this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.Carrito);
             this.Controls.Add(this.ProductosBuscados);

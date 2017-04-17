@@ -152,10 +152,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceCorreoTele\notificacionesService.wsdl" />
-    <None Include="Service References\ServiceFactura\CarritoConsumidor.ServiceFactura.crearCompraResponse.datasource">
+    <None Include="Service References\ServiceFactura\CarritoConsumidor.ServiceFactura.generaIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceFactura\CarritoConsumidor.ServiceFactura.eliminarCarritoResponse.datasource">
+    <None Include="Service References\ServiceFactura\CarritoConsumidor.ServiceFactura.operacionCrearCompraResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceFactura\CarritoConsumidor.ServiceFactura.producto.datasource">

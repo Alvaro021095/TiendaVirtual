@@ -20,7 +20,7 @@ namespace CarritoConsumidor.vista
         public CtlCompras ctlCom;
         private CtlFactura ctlFactura;
         private CtlCarrito ctlcarrito;
-        private CtlNotificar ctlNoti;
+        //private CtlNotificar ctlNoti;
         int cantidadInicial;
         int cantidadRequerida = 0;
 
@@ -31,7 +31,7 @@ namespace CarritoConsumidor.vista
             ctlCom = new CtlCompras();
             ctlcarrito = new CtlCarrito();
             ctlFactura = new CtlFactura();
-            ctlNoti = new CtlNotificar();
+            //ctlNoti = new CtlNotificar();
             cantidadInicial = 0;
             listarCarrito();
 
@@ -238,7 +238,7 @@ namespace CarritoConsumidor.vista
                 mail.from = "venta@gmail.com";
                 mail.subject = "Titulo";
                 mail.to = ""+thisUser.cliente.correo;
-                ctlNoti.notificar(mail);
+                //ctlNoti.notificar(mail);
             }
 
         }
