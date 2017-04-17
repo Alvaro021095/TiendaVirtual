@@ -1,4 +1,5 @@
 ﻿using CarritoConsumidor.controladores;
+using CarritoConsumidor.ServiceCorreoTele;
 using CarritoConsumidor.ServiceLogin;
 using CarritoConsumidor.ServiceProducto;
 using System;
@@ -19,6 +20,7 @@ namespace CarritoConsumidor.vista
         public CtlCompras ctlCom;
         private CtlFactura ctlFactura;
         private CtlCarrito ctlcarrito;
+        private CtlNotificar ctlNoti;
         int cantidadInicial;
         int cantidadRequerida = 0;
 
@@ -29,6 +31,7 @@ namespace CarritoConsumidor.vista
             ctlCom = new CtlCompras();
             ctlcarrito = new CtlCarrito();
             ctlFactura = new CtlFactura();
+            ctlNoti = new CtlNotificar();
             cantidadInicial = 0;
             listarCarrito();
 
@@ -143,7 +146,7 @@ namespace CarritoConsumidor.vista
             }
             catch (Exception exception)
             {
-
+                Console.WriteLine(exception);
                 MessageBox.Show("Por Favor seleccion o busque un producto");
             }
 
@@ -197,6 +200,8 @@ namespace CarritoConsumidor.vista
         {
             List<CarritoConsumidor.ServiceFactura.itemsDTO> items = new List<ServiceFactura.itemsDTO>();
 
+            String productos = "";
+
             foreach (DataGridViewRow row in Carrito.Rows)
             {
                 CarritoConsumidor.ServiceFactura.itemsDTO item = new ServiceFactura.itemsDTO();
@@ -212,11 +217,30 @@ namespace CarritoConsumidor.vista
                 item.valorTotal = Convert.ToString(objValor);
 
                 items.Add(item);
-
+                
             }
 
-            ctlFactura.crearCompra(thisUser.id, Convert.ToInt32(txtTotalFac.Text),items);
+            for (int i = 0; i<items.Count;i++ )
+            {
+                if(items.ElementAt(i).id.Equals("")){
+                    items.Remove((items.ElementAt(i)));
+                }
+            }
             
+
+            String resul = ctlFactura.crearCompra(thisUser.id,Convert.ToDouble(txtTotalFac.Text),items);
+
+            if (resul.Equals("Exito"))
+            {
+                mail mail = new mail();
+                mail.body = "Hola señor(a): "+thisUser.cliente.nombre + " "+thisUser.cliente.apellido+
+                    " usted a realizado la compra de los siguientes productos: ";
+                mail.from = "venta@gmail.com";
+                mail.subject = "Titulo";
+                mail.to = ""+thisUser.cliente.correo;
+                ctlNoti.notificar(mail);
+            }
+
         }
     }
 }

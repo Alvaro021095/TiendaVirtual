@@ -53,7 +53,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(234, 34);
+            this.label1.Location = new System.Drawing.Point(63, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 0;
@@ -61,14 +61,14 @@
             // 
             // txtNombrePro
             // 
-            this.txtNombrePro.Location = new System.Drawing.Point(333, 31);
+            this.txtNombrePro.Location = new System.Drawing.Point(162, 31);
             this.txtNombrePro.Name = "txtNombrePro";
             this.txtNombrePro.Size = new System.Drawing.Size(189, 20);
             this.txtNombrePro.TabIndex = 1;
             // 
             // btnBuscarPro
             // 
-            this.btnBuscarPro.Location = new System.Drawing.Point(545, 31);
+            this.btnBuscarPro.Location = new System.Drawing.Point(374, 31);
             this.btnBuscarPro.Name = "btnBuscarPro";
             this.btnBuscarPro.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarPro.TabIndex = 2;
@@ -78,9 +78,9 @@
             // 
             // btnAgregarCarri
             // 
-            this.btnAgregarCarri.Location = new System.Drawing.Point(418, 128);
+            this.btnAgregarCarri.Location = new System.Drawing.Point(218, 211);
             this.btnAgregarCarri.Name = "btnAgregarCarri";
-            this.btnAgregarCarri.Size = new System.Drawing.Size(75, 40);
+            this.btnAgregarCarri.Size = new System.Drawing.Size(133, 23);
             this.btnAgregarCarri.TabIndex = 3;
             this.btnAgregarCarri.Text = "Agregar al Carrito";
             this.btnAgregarCarri.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             // Total
             // 
             this.Total.AutoSize = true;
-            this.Total.Location = new System.Drawing.Point(378, 213);
+            this.Total.Location = new System.Drawing.Point(389, 211);
             this.Total.Name = "Total";
             this.Total.Size = new System.Drawing.Size(34, 13);
             this.Total.TabIndex = 4;
@@ -97,7 +97,7 @@
             // 
             // txtTotalFac
             // 
-            this.txtTotalFac.Location = new System.Drawing.Point(418, 210);
+            this.txtTotalFac.Location = new System.Drawing.Point(429, 208);
             this.txtTotalFac.Name = "txtTotalFac";
             this.txtTotalFac.Size = new System.Drawing.Size(94, 20);
             this.txtTotalFac.TabIndex = 5;
@@ -111,9 +111,9 @@
             this.Valor,
             this.Cantidad,
             this.CantidadRequest});
-            this.ProductosBuscados.Location = new System.Drawing.Point(12, 105);
+            this.ProductosBuscados.Location = new System.Drawing.Point(26, 73);
             this.ProductosBuscados.Name = "ProductosBuscados";
-            this.ProductosBuscados.Size = new System.Drawing.Size(344, 166);
+            this.ProductosBuscados.Size = new System.Drawing.Size(543, 126);
             this.ProductosBuscados.TabIndex = 6;
             this.ProductosBuscados.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductosBuscados_RowEnter);
             // 
@@ -150,9 +150,9 @@
             this.NombreCompra,
             this.CantidadCompra,
             this.ValorCompra});
-            this.Carrito.Location = new System.Drawing.Point(558, 105);
+            this.Carrito.Location = new System.Drawing.Point(26, 255);
             this.Carrito.Name = "Carrito";
-            this.Carrito.Size = new System.Drawing.Size(312, 166);
+            this.Carrito.Size = new System.Drawing.Size(443, 77);
             this.Carrito.TabIndex = 7;
             // 
             // IdCompra
@@ -177,9 +177,9 @@
             // 
             // btnComprar
             // 
-            this.btnComprar.Location = new System.Drawing.Point(309, 320);
+            this.btnComprar.Location = new System.Drawing.Point(513, 269);
             this.btnComprar.Name = "btnComprar";
-            this.btnComprar.Size = new System.Drawing.Size(184, 23);
+            this.btnComprar.Size = new System.Drawing.Size(88, 23);
             this.btnComprar.TabIndex = 8;
             this.btnComprar.Text = "Comprar";
             this.btnComprar.UseVisualStyleBackColor = true;
@@ -189,7 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 389);
+            this.ClientSize = new System.Drawing.Size(626, 344);
             this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.Carrito);
             this.Controls.Add(this.ProductosBuscados);

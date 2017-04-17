@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 
 namespace CarritoConsumidor.controladores
 {
-    class CtlFactura
+    public class CtlFactura
     {
 
-         public void crearCompra(int idUsuario, double valorFactura,List<itemsDTO> lista)
+        public String crearCompra(int idUsuario, double valorFactura, List<itemsDTO> lista)
         {
 
             FacturaControllerClient wsFactura = new FacturaControllerClient();
-
-            wsFactura.crearCompra(idUsuario,valorFactura,lista.ToArray());
-
+            itemsDTO[] nuevLi = lista.ToArray();
+            Console.WriteLine(nuevLi[0].id);
+            String resu = wsFactura.operacionCrearCompra(idUsuario,valorFactura,nuevLi);
+            return resu;
         }
 
     }
