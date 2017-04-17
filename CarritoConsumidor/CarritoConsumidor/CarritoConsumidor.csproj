@@ -34,8 +34,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,11 +54,6 @@
     <Compile Include="controladores\CtlFactura.cs" />
     <Compile Include="controladores\CtlLogin.cs" />
     <Compile Include="Service References\ServiceCarrito\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\ServiceCorreoTele\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -101,6 +98,11 @@
     <Compile Include="vista\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Web References\ServiceNoti\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="vista\Compra.resx">
       <DependentUpon>Compra.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,16 +144,6 @@
     </None>
     <None Include="Service References\ServiceCarrito\CarritoControllerService.wsdl" />
     <None Include="Service References\ServiceCarrito\CarritoControllerService1.wsdl" />
-    <None Include="Service References\ServiceCorreoTele\CarritoConsumidor.ServiceCorreoTele.enviarMailResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceCorreoTele\CarritoConsumidor.ServiceCorreoTele.enviarSMSResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceCorreoTele\CarritoConsumidor.ServiceCorreoTele.respuestaNotificacion.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceCorreoTele\notificacionesService.wsdl" />
     <None Include="Service References\ServiceFactura\CarritoConsumidor.ServiceFactura.generaIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -164,7 +156,7 @@
     <None Include="Service References\ServiceFactura\CarritoConsumidor.ServiceFactura.validarItemsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceFactura\FacturaControllerService1.wsdl" />
+    <None Include="Service References\ServiceFactura\FacturaControllerService.wsdl" />
     <None Include="Service References\ServiceLogin\CarritoConsumidor.ServiceLogin.operacionLoginResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -173,7 +165,14 @@
     </None>
     <None Include="Service References\ServiceLogin\LoginControllerService.wsdl" />
     <None Include="Service References\ServiceLogin\LoginControllerService1.wsdl" />
-    <None Include="Service References\ServiceLogin\LoginControllerService11.wsdl" />
+    <None Include="Web References\ServiceNoti\notificacionesService.wsdl" />
+    <None Include="Web References\ServiceNoti\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ServiceNoti\respuestaNotificacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -183,13 +182,13 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceCarrito\" />
-    <WCFMetadataStorage Include="Service References\ServiceCorreoTele\" />
     <WCFMetadataStorage Include="Service References\ServiceFactura\" />
     <WCFMetadataStorage Include="Service References\ServiceLogin\" />
     <WCFMetadataStorage Include="Service References\ServiceProducto\" />
     <WCFMetadataStorage Include="Service References\ServicioCliente\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\ServiceLogin\LoginControllerService2.wsdl" />
     <None Include="Service References\ServiceProducto\CarritoConsumidor.ServiceProducto.operacionListarProductosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -227,18 +226,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceFactura\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceFactura\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceFactura\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\ServiceLogin\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -263,13 +250,29 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceCorreoTele\configuration91.svcinfo" />
+    <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceCorreoTele\configuration.svcinfo" />
+    <WebReferenceUrl Include="http://104.197.238.134:8080/notificaciones/notificacionesService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ServiceNoti\</RelPath>
+      <UpdateFromURL>http://104.197.238.134:8080/notificaciones/notificacionesService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CarritoConsumidor_ServiceNoti_notificacionesService</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceCorreoTele\Reference.svcmap">
+    <None Include="Service References\ServiceFactura\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceFactura\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceFactura\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

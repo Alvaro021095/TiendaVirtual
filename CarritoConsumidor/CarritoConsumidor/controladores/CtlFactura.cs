@@ -13,10 +13,9 @@ namespace CarritoConsumidor.controladores
         public String crearCompra(int idUsuario, double valorFactura, List<itemsDTO> lista)
         {
 
-            FacturaControllerClient wsFactura = new FacturaControllerClient();
+            FacturaControllerClient wsFactura2 = new FacturaControllerClient();
             itemsDTO[] nuevLi = lista.ToArray();
-            Console.WriteLine(nuevLi[0].id);
-            String resu = wsFactura.operacionCrearCompra(idUsuario,valorFactura,nuevLi);
+            String resu = wsFactura2.operacionCrearCompra(idUsuario,valorFactura,nuevLi);
             return resu;
         }
 

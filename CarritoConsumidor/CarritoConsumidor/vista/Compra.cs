@@ -1,6 +1,6 @@
 ﻿using CarritoConsumidor.controladores;
-using CarritoConsumidor.ServiceCorreoTele;
 using CarritoConsumidor.ServiceLogin;
+using CarritoConsumidor.ServiceNoti;
 using CarritoConsumidor.ServiceProducto;
 using System;
 using System.Collections.Generic;
@@ -201,10 +201,13 @@ namespace CarritoConsumidor.vista
             List<CarritoConsumidor.ServiceFactura.itemsDTO> items = new List<ServiceFactura.itemsDTO>();
 
             String productos = "";
+            String total = txtTotalFac.Text;
 
             foreach (DataGridViewRow row in Carrito.Rows)
             {
                 CarritoConsumidor.ServiceFactura.itemsDTO item = new ServiceFactura.itemsDTO();
+
+                String objNombre = (String)row.Cells["NombreCompra"].Value;
 
                 var objCantidad =  row.Cells["CantidadCompra"].Value;
 
@@ -217,7 +220,7 @@ namespace CarritoConsumidor.vista
                 item.valorTotal = Convert.ToString(objValor);
 
                 items.Add(item);
-                
+                productos += item.cantidad + " " + objNombre;
             }
 
             for (int i = 0; i<items.Count;i++ )
@@ -232,15 +235,41 @@ namespace CarritoConsumidor.vista
 
             if (resul.Equals("Exito"))
             {
-                mail mail = new mail();
-                mail.body = "Hola señor(a): "+thisUser.cliente.nombre + " "+thisUser.cliente.apellido+
-                    " usted a realizado la compra de los siguientes productos: ";
-                mail.from = "venta@gmail.com";
-                mail.subject = "Titulo";
-                mail.to = ""+thisUser.cliente.correo;
-                //ctlNoti.notificar(mail);
+                MessageBox.Show("si");
+                notificacionesService not = new notificacionesService();
+                not.Url = "http://104.197.238.134:8080/notificaciones/notificacionesService";
+                mail m = new mail();
+                m.body = "Señor(a) "+ thisUser.cliente.nombre+ " "+thisUser.cliente.apellido+
+                    " le confirmamos que usted a realizado la compra de los siguietes productos: "+
+                    productos+ " y su costo total es de: "+ total;
+                m.from = "tienda@gmail.com";
+                m.subject = "TIENDA";
+                m.to = thisUser.cliente.correo;
+
+                sms s = new sms();
+                s.texto = "Señor(a) "+thisUser.cliente.nombre+ 
+                    " a realizado una compra por el valor de: "+total;
+                s.to = thisUser.cliente.telefono;
+
+                not.enviarSMS(s);
+                not.enviarMail(m);
+
+
+                //desde aqui
+
+
+            }
+            else
+            {
+                MessageBox.Show("No se pudo realizar la compra");
             }
 
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
